@@ -5,6 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:paddingTop="20dp"
+    android:paddingBottom="56dp"
+    android:paddingHorizontal="20dp"
     tools:context=".ui.home.HomeFragment">
 
     <ImageView
@@ -12,11 +15,14 @@
         android:layout_height="wrap_content"
         android:src="@drawable/logobrain"
         android:scaleType="fitCenter"
-        android:layout_marginTop="15dp"/>
+        android:layout_marginTop="15dp"
+        />
+
     <GridView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:numColumns="3"
-        android:id="@+id/reminders"
-        android:layout_marginTop="15dp"/>
+        android:id="@+id/gridview"
+        android:layout_marginTop="15dp"
+        />
 </LinearLayout>

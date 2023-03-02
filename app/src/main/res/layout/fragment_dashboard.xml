@@ -161,20 +161,19 @@
                     </TableRow>
 
                 </TableLayout>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/time"
-                android:textAlignment="center"
-                android:textColor="@color/dusty_rose"
 
-                android:layout_marginTop="20dp"/>
-            <EditText
-                android:layout_width="match_parent"
+            <Button
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:inputType="text"
-                android:id="@+id/time"/>
-                
+                android:backgroundTint="@color/white"
+                android:text="Set time"
+                android:textColor="@color/gray"
+                android:id="@+id/time"
+                android:textAllCaps="false"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                />
+
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
