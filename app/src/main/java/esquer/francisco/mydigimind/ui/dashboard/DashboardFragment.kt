@@ -9,6 +9,11 @@ import android.view.ViewGroup
 import android.widget.*
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.google.firebase.FirebaseApp
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.ktx.storage
 import esquer.francisco.mydigimind.R
 import esquer.francisco.mydigimind.databinding.FragmentDashboardBinding
 import esquer.francisco.mydigimind.ui.Task
@@ -32,9 +37,12 @@ class DashboardFragment : Fragment() {
             ViewModelProvider(this).get(DashboardViewModel::class.java)
 
         _binding = FragmentDashboardBinding.inflate(inflater, container, false)
-        val root: View = binding.root
 
+        val root: View = binding.root
         val time: Button = root.findViewById(R.id.time)
+
+        var storage = FirebaseFirestore.getInstance()
+
         time.setOnClickListener{
             val cal = Calendar.getInstance()
             val timeSetListener = TimePickerDialog.OnTimeSetListener { timePicker, hour, minute ->
@@ -57,27 +65,25 @@ class DashboardFragment : Fragment() {
         val sunday: CheckBox = root.findViewById(R.id.sunday)
 
         done.setOnClickListener{
-            var titulo = title.text.toString()
-            var tiempo = time.text.toString()
-            var days = ArrayList<String>()
-            if (monday.isChecked)
-                days.add("Monday")
-            if (tuesday.isChecked)
-                days.add("Tuesday")
-            if (wednesday.isChecked)
-                days.add("Wednesday")
-            if (thursday.isChecked)
-                days.add("Thursday")
-            if (friday.isChecked)
-                days.add("Friday")
-            if (saturday.isChecked)
-                days.add("Saturday")
-            if (sunday.isChecked)
-                days.add("Sunday")
+            var actividad = hashMapOf(
+                "actividad" to title.text.toString(),
+                "lu" to monday.isChecked,
+                "ma" to tuesday.isChecked,
+                "mi" to wednesday.isChecked,
+                "ju" to thursday.isChecked,
+                "vi" to friday.isChecked,
+                "sa" to saturday.isChecked,
+                "do" to sunday.isChecked,
+                "tiempo" to time.text.toString()
+            )
 
-            var task = Task(titulo,days,tiempo)
-            HomeFragment.tasks.add(task)
-            Toast.makeText(root.context, "New task added!", Toast.LENGTH_SHORT).show()
+            storage.collection("actividades").add(actividad).addOnSuccessListener { documentReference ->
+                Toast.makeText(root.context, "New task added!!", Toast.LENGTH_SHORT).show()
+            }
+                .addOnFailureListener { e ->
+                    Toast.makeText(root.context, "Error adding task.", Toast.LENGTH_SHORT).show()
+
+                }
         }
         return root
     }

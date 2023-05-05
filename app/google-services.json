@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "296424736384",
+    "project_id": "bd-mydigimind",
+    "storage_bucket": "bd-mydigimind.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:296424736384:android:9621caa51512ff3a3d0865",
+        "android_client_info": {
+          "package_name": "esquer.francisco.mydigimind"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "296424736384-pr5m5gv53d6cre05nhrprra3ucqgup91.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "esquer.francisco.mydigimind",
+            "certificate_hash": "3ce702d4e005f10362ff2dde3a34be8fa75c091e"
+          }
+        },
+        {
+          "client_id": "296424736384-s3pukknu4js42r2ah410uogeimqb3gc0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0mlagrsd8RjGI-j4on6RXcwtxgC_QZ_8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "296424736384-s3pukknu4js42r2ah410uogeimqb3gc0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

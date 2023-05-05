@@ -14,8 +14,9 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -27,140 +28,190 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/reminder_name"
-                android:textAlignment="center"
                 android:textColor="@color/dusty_rose"
+                android:layout_marginTop="20dp"
+                android:textAlignment="center"
+                />
 
-                android:layout_marginTop="20dp"/>
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
-                android:id="@+id/name"/>
+                android:id="@+id/name" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/when"
-                android:textAlignment="center"
                 android:textColor="@color/dusty_rose"
+                android:layout_marginTop="20dp"
+                android:textAlignment="center"
+                />
 
-                android:layout_marginTop="20dp"/>
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stretchColumns="0"
+                >
 
-                <TableLayout
-                    android:layout_width="match_parent"
-                    android:stretchColumns="0"
-                    android:layout_height="wrap_content">
+                <TableRow
+                    android:layout_height="wrap_content"
+                    android:layout_width="50dp"
+                    >
 
-                    <TableRow
+                    <TextView
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_width="50dp">
+                        android:text="@string/m"
+                        android:textSize="20sp"/>
 
-                        <TextView
-                            android:layout_width="70dp"
-                            android:textSize="20sp"
-                            android:layout_height="wrap_content"
-                            android:text="@string/m"/>
-                        <CheckBox
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="30dp"
-                            android:id="@+id/monday"/>
-                    </TableRow>
-                    <TableRow
+                    <CheckBox
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_width="50dp">
+                        android:id="@+id/monday"
+                        android:layout_marginLeft="30dp"
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:textSize="20sp"
-                            android:layout_height="wrap_content"
-                            android:text="@string/t"/>
-                        <CheckBox
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="30dp"
-                            android:id="@+id/tuesday"/>
-                    </TableRow>
-                    <TableRow
+                        />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_height="wrap_content"
+                    android:layout_width="50dp"
+                    >
+
+                    <TextView
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_width="50dp">
+                        android:text="@string/t"
+                        android:textSize="20sp"/>
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:textSize="20sp"
-                            android:layout_height="wrap_content"
-                            android:text="@string/w"/>
-                        <CheckBox
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="30dp"
-                            android:id="@+id/wednesday"/>
-                    </TableRow>
-                    <TableRow
+                    <CheckBox
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_width="50dp">
+                        android:id="@+id/tuesday"
+                        android:layout_marginLeft="30dp"
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:textSize="20sp"
-                            android:layout_height="wrap_content"
-                            android:text="@string/x"/>
-                        <CheckBox
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="30dp"
-                            android:id="@+id/thursday"/>
-                    </TableRow>
+                        />
 
-                    <TableRow
+                </TableRow>
+
+                <TableRow
+                    android:layout_height="wrap_content"
+                    android:layout_width="50dp"
+                    >
+
+                    <TextView
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_width="50dp">
+                        android:text="@string/w"
+                        android:textSize="20sp"/>
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:textSize="20sp"
-                            android:layout_height="wrap_content"
-                            android:text="@string/f"/>
-                        <CheckBox
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="30dp"
-                            android:id="@+id/friday"/>
-                    </TableRow>
-
-                    <TableRow
+                    <CheckBox
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_width="50dp">
+                        android:id="@+id/wednesday"
+                        android:layout_marginLeft="30dp"
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:textSize="20sp"
-                            android:layout_height="wrap_content"
-                            android:text="@string/a"/>
-                        <CheckBox
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="30dp"
-                            android:id="@+id/saturday"/>
-                    </TableRow>
+                        />
 
-                    <TableRow
+                </TableRow>
+
+                <TableRow
+                    android:layout_height="wrap_content"
+                    android:layout_width="50dp"
+                    >
+
+                    <TextView
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_width="50dp">
+                        android:text="@string/x"
+                        android:textSize="20sp"/>
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:textSize="20sp"
-                            android:layout_height="wrap_content"
-                            android:text="@string/s"/>
-                        <CheckBox
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="30dp"
-                            android:id="@+id/sunday"/>
-                    </TableRow>
+                    <CheckBox
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/thursday"
+                        android:layout_marginLeft="30dp"
 
-                </TableLayout>
+                        />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_height="wrap_content"
+                    android:layout_width="50dp"
+                    >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/f"
+                        android:textSize="20sp"/>
+
+                    <CheckBox
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/friday"
+                        android:layout_marginLeft="30dp"
+
+                        />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_height="wrap_content"
+                    android:layout_width="50dp"
+                    >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/a"
+                        android:textSize="20sp"/>
+
+                    <CheckBox
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/saturday"
+                        android:layout_marginLeft="30dp"
+
+                        />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_height="wrap_content"
+                    android:layout_width="50dp"
+                    >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/s"
+                        android:textSize="20sp"/>
+
+                    <CheckBox
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:id="@+id/sunday"
+                        />
+
+                </TableRow>
+
+            </TableLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/time"
+                android:textColor="@color/dusty_rose"
+                android:layout_marginTop="20dp"
+                android:textAlignment="center"
+                />
+
+
 
             <Button
                 android:layout_width="wrap_content"
@@ -178,19 +229,25 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/dusty_rose"
-                android:text="@string/done"
+                android:text="done"
                 android:textColor="@color/white"
                 android:id="@+id/done"
                 android:layout_gravity="center"
-                android:layout_marginTop="30dp"/>
+                android:layout_marginTop="10dp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:backgroundTint="@color/white"
+                android:layout_marginTop="20dp"
+                />
 
 
         </LinearLayout>
 
 
     </ScrollView>
-
-
 
 
 

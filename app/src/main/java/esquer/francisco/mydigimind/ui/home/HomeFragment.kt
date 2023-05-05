@@ -10,6 +10,9 @@ import android.widget.GridView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.ktx.storage
 import esquer.francisco.mydigimind.R
 import esquer.francisco.mydigimind.databinding.FragmentHomeBinding
 import esquer.francisco.mydigimind.ui.Task
@@ -17,13 +20,14 @@ import esquer.francisco.mydigimind.ui.Task
 class HomeFragment : Fragment() {
 
     private var adaptador: AdaptadorTareas? = null
-    private var vincula: FragmentHomeBinding? = null
+    private var _binding: FragmentHomeBinding? = null
     companion object {
         var tasks = ArrayList<Task>()
         var first = true
     }
 
-    private val binding get() = vincula!!
+
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -33,7 +37,7 @@ class HomeFragment : Fragment() {
         val homeViewModel =
             ViewModelProvider(this).get(HomeViewModel::class.java)
 
-        vincula = FragmentHomeBinding.inflate(inflater, container, false)
+        _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root = inflater.inflate(R.layout.fragment_home,container,false)
         if (first==true){
             fillTasks()
@@ -53,8 +57,8 @@ class HomeFragment : Fragment() {
         tasks.add(Task("Practice 3", arrayListOf("Wednesday"),"14:00"))
         tasks.add(Task("Practice 4", arrayListOf("Saturday"),"11:00"))
         tasks.add(Task("Practice 5", arrayListOf("Friday"),"13:00"))
-        tasks.add(Task("Practice 6", arrayListOf("Thursday"),"10:30"))
-        tasks.add(Task("Practice 7", arrayListOf("Monday"),"15:00"))
+        tasks.add(Task("Practice 6", arrayListOf("Thursday"),"10:40"))
+        tasks.add(Task("Practice 7", arrayListOf("Monday"),"12:00"))
 
     }
 
